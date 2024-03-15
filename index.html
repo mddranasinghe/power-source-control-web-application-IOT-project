@@ -7,24 +7,22 @@
 <style>
 
 .loader-line {
-    width: 20%;
+    width: 100%;
     height: 4px;
     overflow: hidden;
     background-color:white;
-    position: fixed;
     border-radius: 20px;
-    margin-left: 25%;
-    margin-top: 100px;
+    margin-left: 0 auto;
+   
 }
 .loader-line2 {
-    width: 20%;
+    width: 100%;
     height: 4px;
-    position: fixed;
     overflow: hidden;
     background-color:white;
      border-radius: 20px;
-     margin-left: 55%;
-     margin-top: 100px;
+    
+  
 }
 .dash {
     width: 10%;
@@ -63,38 +61,40 @@
 .dash:nth-child(5) {
     animation-delay: 0.8s;
 }
-
-#img_td{ position: fixed; left:20%;top:10%}
-#img_td2{ position: fixed; left:42%;top:10%;}
-#img_td3{ position: fixed; right:20%;top:10%}
+table{border: 1px solid; width: 80%; margin: 0 auto;}
+#img_td{ }
+#img_td2{  }
+#img_td3{}
 </style>
 </head>
 
 <body>
-<div>
-    <div class="loader-line">
-        <div class="dash"></div>
-        <div class="dash"></div>
-        <div class="dash"></div>
-        <div class="dash"></div>
-        <div class="dash"></div>
-        <div class="dash"></div>
-      
-      </div>
-      <div class="loader-line2">
-        <div class="dash"></div>
-        <div class="dash"></div>
-        <div class="dash"></div>
-        <div class="dash"></div>
-        <div class="dash"></div>
-        <div class="dash"></div>
-       
-        
-      </div>
-      <img src="resource\image\generator.png" id="img_td" alt="Power" style="width: 50opx; height: 50px;" >
-      <img src="resource\image\device.png" id="img_td2" alt="Power" style="width: 50opx; height: 50px;" >
-      <img src="resource\image\generator.png" id="img_td3" alt="Power" style="width: 50opx; height: 50px;" >
+     
 
-    </div>
+<table>
+    <tr>
+        <td><img src="resource\image\generator.png" id="img_td" alt="Power" style="width: 50opx; height: 50px;" ></td>
+        <td>  <div class="loader-line">
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+          
+          </div></td>
+        <td>      <img src="resource\image\device.png" id="img_td2" alt="Power" style="width: 50opx; height: 50px;" ></td>
+        <td>  <div class="loader-line2">
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div>
+            <div class="dash"></div></div></td>
+        <td><img src="resource\image\generator.png" id="img_td3" alt="Power" style="width: 50opx; height: 50px;" ></td>
+    </tr>
+</table>
+
+   
     </body>
 </html>
