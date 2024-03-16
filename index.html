@@ -5,96 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #img_td1{position: relative;margin-left:10%; top:0; }
-        #img_td2{position: relative;margin-left:20%; top:0; }
-        #img_td3{position: relative;margin-left:20%; top:0; }
-        #img_td4{position: fixed; top:22%; left: 42%;}
+        table {border-style: none; width: 100%;}
+        td{border-style: none; vertical-align: top; text-align: center;}
+        .continar{width: 80%; height: 500px; margin: 0 auto; border-style:solid ; position: relative; }
+       .continar img{width: 40px; height: 40px; }
+        #img_td1{ }
+        #img_td2{}
+        #img_td3{}
+        #img_td4{ background-color: rgb(184, 224, 237);  width: 50px; height: 50px;}
+        .left_path{width: 50%; height: 120px; border-style: solid; border-top: none; border-right: none; border-width: 1px; margin-left: 50%; margin-bottom: 10%;}
 
+        .middle_path{width: 0%; height: 80px; border-style: solid; border-top: none; border-left:none ; border-width: 1px; margin-left: 50%; margin-bottom: 10%;}
+        .right_path{width: 50%; height: 120px; border-style: solid; border-top: none; border-left:none ; border-width: 1px; margin-right: 50%; margin-bottom: 10%;}
 
+#left_dash{
+    background: 
+    linear-gradient(0deg,rgb(78, 234, 26) 50%, transparent 50%),/* Top border */
+    linear-gradient(90deg,rgb(78, 234, 26) 50%, transparent 50%);/* Top border */
 
-        .border {
- 
-  background: 
-    linear-gradient(90deg,white 50%, transparent 50%),/* Top border */
-    linear-gradient(90deg, green 50%, transparent 50%), /* Bottom border */
-    linear-gradient(0deg, green 50%, transparent 50%),  /* Right border */
-    linear-gradient(0deg, white  50%, transparent 50%);  /* Left border */
-  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y; /* Repeat gradients */
-  background-size: 15px 4px, 15px 4px, 4px 15px, 4px 15px; /* Size of gradients */
-  background-position: 0px 0px, 0px 100px, 00px 0px, 0px 0px; /* Positioning of gradients */
-  padding: 10px; /* Padding to make room for the border within the box */
-  animation: border-dance 4s infinite linear; /* Apply animation to border-dance */
+    background-repeat:repeat-y,repeat-x; 
+    background-size: 3px 25px,25px 3px;
+    animation: border-dance 1s infinite linear;
+        }
+  @keyframes border-dance{
+ 0% {
+   background-position: 0px 0px,0px 116px;
+ }
+ 100% {
+   background-position: 0px 120px ,90px 116px;
+ }
+
 }
 
-@keyframes border-dance {
-  0% {
-    background-position:300px 0px, 0px 116px, 0px 0px;
-  }
-  100% {
-    background-position:0px 0px, 300px 116px, 0px 150px ;
-  }
-}
-.border1{
-background: 
-    linear-gradient(90deg,white 50%, transparent 50%),/* Top border */
-    linear-gradient(90deg, white 50%, transparent 50%), /* Bottom border */
-    linear-gradient(0deg, green 50%, transparent 50%),  /* Right border */
-    linear-gradient(0deg, white  50%, transparent 50%);  /* Left border */
-  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y; /* Repeat gradients */
-  background-size: 15px 4px, 15px 4px, 4px 15px, 4px 15px; /* Size of gradients */
-  background-position: 0px 0px, 0px 100px, 00px 0px, 0px 0px; /* Positioning of gradients */
-  padding: 10px; /* Padding to make room for the border within the box */
-  animation: border-dance 4s infinite linear; /* Apply animation to border-dance */
-}
+    
 
-@keyframes border-dance {
-  0% {
-    background-position:300px 0px, 0px 116px, 0px 0px;
-  }
-  100% {
-    background-position:0px 0px, 300px 116px, 0px 150px ;
-  }
-}
-.border2{
-background: 
-    linear-gradient(90deg,white 50%, transparent 50%),/* Top border */
-    linear-gradient(90deg,green 50%, transparent 50%), /* Bottom border */
-    linear-gradient(0deg, white 50%, transparent 50%),  /* Right border */
-    linear-gradient(0deg, green  50%, transparent 50%);  /* Left border */
-  background-repeat: repeat-x, repeat-x, repeat-y, repeat-y; /* Repeat gradients */
-  background-size: 15px 4px, 15px 4px, 4px 15px, 4px 15px; /* Size of gradients */
-  background-position: 0px 0px, 0px 100px, 00px 0px, 0px 0px; /* Positioning of gradients */
-  padding: 10px; /* Padding to make room for the border within the box */
-  animation: border-dance 4s infinite linear; /* Apply animation to border-dance */
-}
-
-@keyframes border-dance {
-  0% {
-    background-position:00px 0px, 300px 116px, 0px 0px,120px 00px;
-  }
-  100% {
-    background-position:300px 0px, 0px 116px, 0px 150px,120px 150px;
-  }
-}
-
-    </style>
+    </style> 
 </head>
 <body>
-    <div style="width: 80%; height: 500px; margin: 0 auto; border-style:groove ; position: relative;">
-    <img src="resource\image\generator.png" id="img_td1" alt="Power" style="width: 10%; height: 10%" >
-    <img src="resource\image\generator.png" id="img_td2" alt="Power" style="width: 10%; height: 10%;" >
-    <img src="resource\image\generator.png" id="img_td3" alt="Power" style="width: 10%; height: 10%;" >
+    <div  class="continar">
+<table >
+    <tr >
+        <td style="width: 50%; ">
+            <img src="resource\image\generator.png" id="img_td1" alt="Power">
+            <div class=left_path id="left_dash"></div>
+
+        </td>
+                <td>
+            <img src="resource\image\generator.png" id="img_td2" alt="Power"  >
+            <div class="middle_path"></div>
+            <img src="resource\image\generator.png" id="img_td4" alt="Power"  >
+
+        </td>
+        <td style="width: 50%;">
+            <img src="resource\image\generator.png" id="img_td3" alt="Power"  >
+            <div class="right_path" ></div>
+
+        </td>
+    </tr>
+  
+    
+</table>
+
+   
 <!--<div class="" style="width: 27%; height: 110px;border-style:groove;margin-left:11%; top:10%;display: inline-block; border-top:none ; border-right: none;" ></div>
 <div style="width: 0%; height: 110px;border-style:groove;margin-left:6%;margin-right: 7%; top:10%;display: inline-block;border-top:none ; border-bottom: none; border-left: none;" ></div>
 <div style="width: 25%; height: 110px;border-style:groove;margin-left:0%; top:10%;display: inline-block;border-top:none ; border-left: none;" ></div>-->
 
-<img src="resource\image\generator.png" id="img_td4" alt="Power" style="width: 10%; height: 10%;" >
 
 
-<div class="border" style="width: 25%;height: 100px; margin-left:11%; top:10%;display: inline-block;" ></div>
-<div class="border1" style="width: 25%;height: 100px; margin-left:6%;margin-right: 7%; top:10%;display: inline-block;" ></div>
-<div class="border2" style="width: 25%;height: 100px; margin-left:50%; margin-top:-29%;" ></div>
 
+
+<!--<div style="position: absolute;width:20%; height:150px ; border-style:solid; border-top: none;border-right: none; border-width:1px;left:23%;top:10%"   ></div>-->
 </div>
 </body>
 </html>
