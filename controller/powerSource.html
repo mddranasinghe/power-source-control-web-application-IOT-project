@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .Gui_table{border-style: none; width: 100%;box-shadow: 0.5px 0.5px 3px 0.5px gray;}
+        td{border-style: none; vertical-align: top; text-align:center ;}
+        .continar{width: 95%; height: 500px; margin: 0 auto;  position: relative; }
+       .continar img{width: 40px; height: 40px; }
+        #img_td1{ }
+        #img_td2{}
+        #img_td3{}
+        #img_td4{   width: 50px; height: 50px;}
+        .left_path{width: 50%; height: 90px; border-style: solid; border-color:rgb(78, 234, 26); border-top: none; border-right: none; border-width: 3px; margin-left: 50%; margin-bottom: 10%;border-radius: 0px 10px; }
+
+        .middle_path{width: 6%; height: 50px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 42%; margin-bottom: 10%;}
+        .right_path{width: 50%; height: 90px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 3px; margin-right: 50%; margin-bottom: 10%;border-radius: 10px 0px;}
+
+        #img_td1:hover{ opacity: 0.5;}
+
+
+#left_dash{
+    background: 
+    linear-gradient(0deg,rgb(78, 234, 26) 50%, transparent 50%),/* Top border */
+    linear-gradient(90deg,rgb(78, 234, 26) 50%, transparent 50%);/* left border */
+
+    background-repeat:repeat-y,repeat-x; 
+    background-size: 3px 25px,25px 3px;
+    animation: border-dance 1.5s infinite linear;
+        }
+  @keyframes border-dance{
+ 0% {
+   background-position: 0px 0px,0px 87px;}
+ 100% {
+   background-position: 0px 99px ,100px 87px;}
+}
+
+#middle_dash{
+    background: 
+    linear-gradient(0deg,rgb(78, 234, 26) 50%, transparent 50%);/* right border */
+
+    background-repeat:repeat-y; 
+    background-size: 3px 25px;
+    animation: border-danc 1.5s infinite linear;
+        }
+  @keyframes border-danc{
+ 0% {
+   background-position: 0px 0px;
+ }
+ 100% {
+   background-position: 00px 100px;
+ }
+
+}
+
+    
+
+    </style> 
+</head>
+<body>
+    <div  class="continar">
+        <table style="width: 100%;"><tr>
+       
+            <td><a href="../index.html"><img src="../resources/image/less-than.png" style="width: 30px; height: 35px;margin-top: 50%; "></a></td>
+            <td style="text-align: center; width:100%;" > <h2 >Power Source Status</h2></td>
+          </tr></table>
+<table class="Gui_table">
+    <tr >
+        <td style="width: 50%; padding-top: 10px;">
+            <img src="../resources\image\solar.svg" id="img_td1" alt="Power" onclick="Details_menu_solar()"  >
+            <div class=left_path id="left_dash"></div>
+
+
+        </td>
+                <td style=" padding-top: 10px;">
+            <img src="../resources\image\generetor.svg" id="img_td2" alt="Power" onclick="Details_menu_generetor()"  >
+            <div class="middle_path" id="middle_dash"></div>
+            <img src="../resources\image\h.svg" id="img_td4" alt="Power" onclick="Details_menu_home()" >
+
+        </td>
+        <td style="width: 50%; padding-top: 10px;">
+            <img src="../resources\image\grid.svg" id="img_td3" alt="Power" onclick="Details_menu_grid()" >
+            <div class="right_path" id="right_dash" ></div>
+
+        </td>
+    </tr>
+  
+    
+</table>
+<div id="Details_menu_home" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; display:inline-block; background-color:rgb(80, 200, 20) ;">home</div>
+<div id="Details_menu_solar" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; display:none;  transition: 2.5s;">solar</div>
+<div id="Details_menu_generetor" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; background-color:aquamarine ; display:none;">generetor</div>
+<div id="Details_menu_grid" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; background-color:rgb(162, 183, 176) ;display: none;">grid</div>
+
+<h1>ggggg</h1>
+
+</div>
+</div>
+
+<script>
+
+function Details_menu_solar()
+{
+document.getElementById("Details_menu_solar").style.display = "inline-block";
+ document.getElementById("Details_menu_home").style.display="none"; 
+ document.getElementById("Details_menu_generetor").style.display="none"; 
+ document.getElementById("Details_menu_grid").style.display="none"; 
+ 
+}
+
+function Details_menu_generetor(){
+    document.getElementById("Details_menu_solar").style.display = "none";
+ document.getElementById("Details_menu_home").style.display="none"; 
+ document.getElementById("Details_menu_generetor").style.display="inline-block"; 
+ document.getElementById("Details_menu_grid").style.display="none"; 
+
+}
+function Details_menu_grid(){
+document.getElementById("Details_menu_solar").style.display = "none";
+ document.getElementById("Details_menu_home").style.display="none"; 
+ document.getElementById("Details_menu_grid").style.display="inline-block"; 
+ document.getElementById("Details_menu_generetor").style.display="none";
+}
+function Details_menu_home(){
+    document.getElementById("Details_menu_solar").style.display = "none";
+ document.getElementById("Details_menu_home").style.display="inline-block"; 
+ document.getElementById("Details_menu_grid").style.display="none"; 
+ document.getElementById("Details_menu_generetor").style.display="none";
+}
+
+</script>
+</body>
+</html>
