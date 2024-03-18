@@ -9,16 +9,16 @@
         td{border-style: none; vertical-align: top; text-align:center ;}
         .continar{width: 95%; height: 500px; margin: 0 auto;  position: relative; }
        .continar img{width: 50px; height: 50px; }
-        #img_td1{ }
-        #img_td2{}
-        #img_td3{}
-        #img_td4{   width: 50px; height: 50px;}
+        #image_solar{ }
+        #image_generetor{}
+        #image_grid{}
+        #image_home{   width: 50px; height: 50px;}
         .left_path{width: 50%; height: 90px; border-style: solid; border-color:rgb(78, 234, 26); border-top: none; border-right: none; border-width: 3px; margin-left: 50%; margin-bottom: 10%;border-radius: 0px 10px; }
 
         .middle_path{width: 6%; height: 50px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 42%; margin-bottom: 10%;}
         .right_path{width: 50%; height: 90px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 3px; margin-right: 50%; margin-bottom: 10%;border-radius: 10px 0px;}
 
-        #img_td1:hover{ opacity: 0.5;}
+        #image_solar.hover-effect{ opacity: 0.5;}
 
 
 #left_dash{
@@ -69,19 +69,19 @@
 <table class="Gui_table">
     <tr >
         <td style="width: 50%; padding-top: 10px;">
-            <img src="../resources\image\solar.svg" id="img_td1" alt="Power" onclick="Details_menu_solar()"  >
+            <img src="../resources\image\solar.svg" id="image_solar" alt="Power" onclick="Details_menu_solar()" ontouchstart="addHoverClass('image_solar')" ontouchend="removeHoverClass('image_solar')"  >
             <div class=left_path id="left_dash"></div>
 
 
         </td>
                 <td style=" padding-top: 10px;">
-            <img src="../resources\image\generetor.svg" id="img_td2" alt="Power" onclick="Details_menu_generetor()"  >
+            <img src="../resources\image\generetor.svg" id="image_generetor" alt="Power" onclick="Details_menu_generetor()"  ontouchstart="addHoverClass('image_solar')" ontouchend="removeHoverClass('image_solar')" >
             <div class="middle_path" id="middle_dash"></div>
-            <img src="../resources\image\h.svg" id="img_td4" alt="Power" onclick="Details_menu_home()" >
+            <img src="../resources\image\h.svg" id="image_home" alt="Power" onclick="Details_menu_home()"ontouchstart="addHoverClass('image_home')" ontouchend="removeHoverClass('image_home')"  >
 
         </td>
         <td style="width: 50%; padding-top: 10px;">
-            <img src="../resources\image\grid.svg" id="img_td3" alt="Power" onclick="Details_menu_grid()" >
+            <img src="../resources\image\grid.svg" id="image_grid" alt="Power" onclick="Details_menu_grid()" ontouchstart="addHoverClass('image_grid')" ontouchend="removeHoverClass('image_grid')" >
             <div class="right_path" id="right_dash" ></div>
 
         </td>
@@ -130,6 +130,14 @@ function Details_menu_home(){
  document.getElementById("Details_menu_generetor").style.display="none";
 }
 
+
+function addHoverClass(id) {
+    document.getElementById(id).classList.add('hover-effect');
+}
+
+function removeHoverClass() {
+    document.getElementById(id).classList.remove('hover-effect');
+}
 </script>
 </body>
 </html>
