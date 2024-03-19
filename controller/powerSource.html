@@ -94,20 +94,25 @@
 <div id="Details_menu_generetor" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; background-color:aquamarine ; display:none;">generetor</div>
 <div id="Details_menu_grid" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; background-color:rgb(162, 183, 176) ;display: none;">grid</div>
 
-<h1>ggggg</h1>
+
+
+<div class="bar" style="width:40%;height:200px; border:rgb(184, 182, 182) solid 3px; border-top: none; border-right: none; margin-top:3% ;">
+<div class="bar_qu" style=" height: 100%; width: 5%;  margin-left:2%; display: inline-block; background-color: green;" ></div>
+<div class="bar_qu" style=" height: 50%; width: 5%; margin-left:2%;display: inline-block; background-color: green;"></div>
+<div class="bar_qu" style=" height: 25%; width: 5%;  margin-left:2%; display: inline-block;background-color: green;" ></div>
+<div class="bar_qu" style=" height: 75%; width: 5%; margin-left:2%;display: inline-block;background-color: green;"></div>
 
 </div>
-</div>
 
+
+</div>
 <script>
-
 function Details_menu_solar()
 {
 document.getElementById("Details_menu_solar").style.display = "inline-block";
  document.getElementById("Details_menu_home").style.display="none"; 
  document.getElementById("Details_menu_generetor").style.display="none"; 
  document.getElementById("Details_menu_grid").style.display="none"; 
- 
 }
 
 function Details_menu_generetor(){
@@ -115,14 +120,15 @@ function Details_menu_generetor(){
  document.getElementById("Details_menu_home").style.display="none"; 
  document.getElementById("Details_menu_generetor").style.display="inline-block"; 
  document.getElementById("Details_menu_grid").style.display="none"; 
-
 }
+
 function Details_menu_grid(){
 document.getElementById("Details_menu_solar").style.display = "none";
  document.getElementById("Details_menu_home").style.display="none"; 
  document.getElementById("Details_menu_grid").style.display="inline-block"; 
  document.getElementById("Details_menu_generetor").style.display="none";
 }
+
 function Details_menu_home(){
     document.getElementById("Details_menu_solar").style.display = "none";
  document.getElementById("Details_menu_home").style.display="inline-block"; 
