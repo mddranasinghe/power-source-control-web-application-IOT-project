@@ -56,6 +56,10 @@
 
 }
 
+.apexcharts-menu-icon {
+  display: none;
+}
+
     
 
     </style> 
@@ -116,6 +120,8 @@
 <script>
   
 var options = {
+    // menuIcon = document.querySelector('.apexcharts-menu-icon')
+      //  if (menuIcon) { menuIcon.style.display = "none";},
           series: [{
           name: 'Solar Power',
           data: [43, 55, 41, 37,32, 33,40]
@@ -144,8 +150,7 @@ var options = {
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
-        var menuIcon = document.querySelector('.apexcharts-menu-icon');
-        if (menuIcon) { menuIcon.style.display = "none";}
+       
     
 
 
