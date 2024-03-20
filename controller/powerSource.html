@@ -90,44 +90,8 @@
   
     
 </table>
-<div id="Details_menu_home" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; display:inline-block; background-color:rgb(80, 200, 20); overflow: auto;">
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
-    home<br>
+<div id="Details_menu_home" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; display:inline-block; background-color:rgb(80, 200, 20); overflow-y:auto">
+   
 </div>
 
 <div id="Details_menu_solar" style="width: 100%; height:200px; box-shadow: 0.5px 0.5px 3px 0.5px gray; margin-top: 10px; display:none;  transition: 2.5s;">solar</div>
@@ -150,67 +114,39 @@
 </div>
 
 <script>
-
+  
 var options = {
           series: [{
-          name: 'Marine Sprite',
-          data: [44, 55, 41, 37, 22, 43, 21,90]
+          name: 'Solar Power',
+          data: [43, 55, 41, 37,32, 33,40]
+        }, { 
+          name: 'Generetor Power',
+          data: [53, 32, 33, 40, 32, 33, 20 ]
         }, {
-          name: 'Striking Calf',
-          data: [53, 32, 33, 52, 13, 43, 32,1]
-        }, {
-          name: 'Tank Picture',
-          data: [12, 17, 11, 9, 15, 11, 20,5]
-        }, {
-          name: 'Bucket Slope',
-          data: [9, 7, 5, 8, 6, 9, 4,2]
-        }, {
-          name: 'Reborn Kid',
-          data: [25, 12, 19, 32, 25, 24, 10,2]
+          name: 'Grid Power',
+          data: [12, 17, 11,32, 33, 40, 20 ]
         }],
-          chart: {
-          type: 'bar',
-          height: 350,
-          stacked: true,
-          stackType: '100%'
-        },
-        plotOptions: {
-          bar: {
-            horizontal: true,
-          },
-        },
-        stroke: {
-          width: 1,
-          colors: ['#fff']
-        },
-        title: {
-          text: ''
-        },
-        xaxis: {
-          categories: [2008, 2009, 2010, 2011, 2012, 2013, 2014,2015],
-        },
+          chart: { type: 'bar', height: 350, stacked: true, stackType: '100%'  },
+
+        plotOptions: {bar: { horizontal: true,}, },
+        stroke: {width: 1,colors: ['#fff'] },
+        title: { text: '' },
+        xaxis: {categories: ["Mon", "Tues", "wed", "Thu", "Fri", "Sta", "Sun"],},
         tooltip: {
           y: {
             formatter: function (val) {
-              return val + "K"
+              return val + "Min"
             }
           }
         },
-        fill: {
-          opacity: 1
-        
-        },
-        legend: {
-          position: 'top',
-          horizontalAlign: 'left',
-          offsetX: 40
-        }
-        };
+        fill: {opacity: 1},
+        legend: { position: 'top', horizontalAlign: 'left', offsetX: 40 }};
 
         var chart = new ApexCharts(document.querySelector("#chart"), options);
         chart.render();
-
-
+        var menuIcon = document.querySelector('.apexcharts-menu-icon');
+        if (menuIcon) { menuIcon.style.display = "none";}
+    
 
 
 
