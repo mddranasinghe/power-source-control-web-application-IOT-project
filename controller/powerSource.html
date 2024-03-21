@@ -21,7 +21,7 @@
 
         .Details_menu{width: 90%; height:100%; margin-bottom: 10px;}
 
-        .details_box{width: 100%; height: 50px; background-color: #F3F3F3; margin-top: 2%; }
+        .details_box{width: 100%; height: 75px; background-color: #F3F3F3; margin-top: 2%; }
 
    #left_dash{
     background: 
@@ -97,36 +97,35 @@
     <td colspan="3">
     <div class="Details_menu" id="Details_menu_home" style="display: inline-block;" >
     <div class="details_box"> This is Home</div>
-    <div class="details_box"></div>
-    
     </div>
+
     <div class="Details_menu" id="Details_menu_solar" style="display: none;">  
      <div class="details_box">This is Solar</div>
-    <div class="details_box"></div></div>
+    </div>
     <div class="Details_menu" id="Details_menu_generetor" style="display: none;">  
      <div class="details_box">This is Generetor</div>
-    <div class="details_box"></div></div>
+</div>
     <div class="Details_menu" id="Details_menu_grid" style="display: none;">
         <div class="details_box">this is Grid</div>
-        <div class="details_box"></div></div>
+</div>
 </td></tr>
 </table>
 
 <div class="button-div" style="margin: 0 auto; width: 100%;">
-<button id="weekButton"ontouchstart="addHoverClass('weekButton')" ontouchend="removeHoverClass('weekButton')">Week</button>
+<button id="weekButton"ontouchstart="addHoverClass('weekButton')" ontouchend="removeHoverClass('weekButton')" clicked>Week</button>
 <button id="monthButton"ontouchstart="addHoverClass('monthButton')" ontouchend="removeHoverClass('monthButton')">Month</button></div>
 
 <div id="chart" style=" width: 100%;"></div>
 
-
 <script>
-
- 
-var chart;
-
+var chart,options,
+X_categories=["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun"],
+solarData = {  name: 'Solar Power',  data: [43, 55, 41, 37, 32, 33, 23]},
+generatorData = { name: 'Generator Power', data: [53, 32, 33, 40, 32, 33, 34]},
+gridData = { name: 'Grid Power', data: [12, 17, 11, 32, 33, 40, 20]};
 
 function chartFun(send) {
-    var options = {
+     options = {
         series: send,
         chart: {
             type: 'bar',
@@ -153,10 +152,10 @@ function chartFun(send) {
             colors: ['#fff']
         },
         title: {
-            text: ''
+            text:undefined
         },
         xaxis: {
-            categories: ["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun"],
+            categories: X_categories,
             labels: {
                 formatter: function (val) {
                     return val + "Min"
@@ -171,51 +170,19 @@ function chartFun(send) {
         tooltip: {
             y: {
                 formatter: function (val) {
-                    return val + "min"
-                }
-            }
+                    return val + "min"}}
         },
-        fill: {
-            opacity: 1
-        },
-        legend: {
-            position: 'top',
-            horizontalAlign: 'left',
-            offsetX: 40
-        }
+        fill: { opacity: 1 ,},
+        legend: {position: 'top',horizontalAlign: 'left',offsetX: 40 }
     };
 
-    if (chart) {
-        chart.destroy();
-    }
+    if (chart) {chart.destroy();}
 
-    
-        chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+    chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render();
         
 }
-
-
-var solarData = {
-  name: 'Solar Power',
-  data: [43, 55, 41, 37, 32, 33, 23]
-};
-
-var generatorData = {
-  name: 'Generator Power',
-  data: [53, 32, 33, 40, 32, 33, 34]
-};
-
-var gridData = {
-  name: 'Grid Power',
-  data: [12, 17, 11, 32, 33, 40, 20]
-};
 chartFun([solarData, generatorData, gridData]);
-
-
-
-
-
 
 function Details_menu_solar()
 {
@@ -232,10 +199,7 @@ function Details_menu_generetor(){
  document.getElementById("Details_menu_home").style.display="none"; 
  document.getElementById("Details_menu_generetor").style.display="inline-block"; 
  document.getElementById("Details_menu_grid").style.display="none"; 
- 
- 
 chartFun([generatorData]);
-
 }
 
 function Details_menu_grid(){
@@ -243,7 +207,6 @@ document.getElementById("Details_menu_solar").style.display = "none";
  document.getElementById("Details_menu_home").style.display="none"; 
  document.getElementById("Details_menu_grid").style.display="inline-block"; 
  document.getElementById("Details_menu_generetor").style.display="none";
-
 chartFun([gridData]);
 }
 
@@ -272,7 +235,10 @@ function removeHoverClass(id) {
     document.getElementById('monthButton').style.backgroundColor = '#E0ECFC';
     document.getElementById('weekButton').style.backgroundColor = 'white';})
 
-
+    window.addEventListener('load', function() {
+            var weekButton = document.getElementById('weekButton');
+            weekButton.click();
+        });
 </script>
 </body>
 </html>
