@@ -82,9 +82,9 @@
 
         </td>
                 <td style=" padding-top: 10px;">
-            <img src="../resources\image\generetor.svg" id="image_generetor" alt="Power" onclick="Details_menu_generetor()"  ontouchstart="addHoverClass('image_generetor')" ontouchend="removeHoverClass('image_generetor')" >
+            <img src="../resources\image\generetor.svg" id="image_generetor" alt="Power"  onclick="Details_menu_generetor()"  ontouchstart="addHoverClass('image_generetor')" ontouchend="removeHoverClass('image_generetor')" >
             <div class="middle_path" id="middle_dash"></div>
-            <img src="../resources\image\h.svg" id="image_home" alt="Power" onclick="Details_menu_home()"ontouchstart="addHoverClass('image_home')" ontouchend="removeHoverClass('image_home')"  >
+            <img src="../resources\image\h.svg" id="image_home" alt="Power"onclick="Details_menu_home()" ontouchstart="addHoverClass('image_home')" ontouchend="removeHoverClass('image_home')"  >
 
         </td>
         <td style="width: 50%; padding-top: 10px;">
@@ -115,85 +115,104 @@
 <div class="button-div" style="margin: 0 auto; width: 100%;">
 <button id="weekButton"ontouchstart="addHoverClass('weekButton')" ontouchend="removeHoverClass('weekButton')">Week</button>
 <button id="monthButton"ontouchstart="addHoverClass('monthButton')" ontouchend="removeHoverClass('monthButton')">Month</button></div>
+
 <div id="chart" style=" width: 100%;"></div>
-</div>
 
-
-</div>
 
 <script>
-  
-var options = {
-        series: [{
-          name: 'Solar Power',
-          data: [43, 55, 41, 37,32, 33,0]
-        }, { 
-          name: 'Generetor Power',
-          data: [53, 32, 33, 40, 32, 33, 20 ]
-        }, {
-          name: 'Grid Power',
-          data: [12, 17, 11,32, 33, 40, 20 ]
-        }],
+
+ 
+var chart;
+
+
+function chartFun(send) {
+    var options = {
+        series: send,
         chart: {
-          type: 'bar',
-          height: 350,
-          stacked: true,
+            type: 'bar',
+            height: 350,
+            stacked: true,
         },
         plotOptions: {
-          bar: {
-            horizontal: true,
-            dataLabels: {
-              total: {
-                enabled: true,
-                offsetX: 0,
-                style: {
-                  fontSize: '13px',
-                  fontWeight: 900
+            bar: {
+                horizontal: true,
+                dataLabels: {
+                    total: {
+                        enabled: true,
+                        offsetX: 0,
+                        style: {
+                            fontSize: '13px',
+                            fontWeight: 900
+                        }
+                    }
                 }
-              }
-            }
-          },
+            },
         },
         stroke: {
-          width: 1,
-          colors: ['#fff']
+            width: 1,
+            colors: ['#fff']
         },
         title: {
-          text: ''
+            text: ''
         },
         xaxis: {
-          categories: ["Mon", "Tues", "wed", "Thu", "Fri", "Sta", "Sun"],
-          labels: {
-            formatter: function (val) {
-              return val + "Min"
+            categories: ["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun"],
+            labels: {
+                formatter: function (val) {
+                    return val + "Min"
+                }
             }
-          }
         },
         yaxis: {
-          title: {
-            text: undefined
-          },
+            title: {
+                text: undefined
+            },
         },
         tooltip: {
-          y: {
-            formatter: function (val) {
-              return val + "min"
+            y: {
+                formatter: function (val) {
+                    return val + "min"
+                }
             }
-          }
         },
         fill: {
-          opacity: 1
+            opacity: 1
         },
         legend: {
-          position: 'top',
-          horizontalAlign: 'left',
-          offsetX: 40
+            position: 'top',
+            horizontalAlign: 'left',
+            offsetX: 40
         }
-        };
+    };
 
-        var chart = new ApexCharts(document.querySelector("#chart"), options);
-        chart.render();
+    if (chart) {
+        chart.destroy();
+    }
+
     
+        chart = new ApexCharts(document.querySelector("#chart"), options);
+        chart.render();
+        
+}
+
+
+var solarData = {
+  name: 'Solar Power',
+  data: [43, 55, 41, 37, 32, 33, 23]
+};
+
+var generatorData = {
+  name: 'Generator Power',
+  data: [53, 32, 33, 40, 32, 33, 34]
+};
+
+var gridData = {
+  name: 'Grid Power',
+  data: [12, 17, 11, 32, 33, 40, 20]
+};
+chartFun([solarData, generatorData, gridData]);
+
+
 
 
 
@@ -203,7 +222,9 @@ function Details_menu_solar()
 document.getElementById("Details_menu_solar").style.display = "inline-block";
  document.getElementById("Details_menu_home").style.display="none"; 
  document.getElementById("Details_menu_generetor").style.display="none"; 
- document.getElementById("Details_menu_grid").style.display="none"; 
+ document.getElementById("Details_menu_grid").style.display="none";
+
+chartFun([solarData]);
 }
 
 function Details_menu_generetor(){
@@ -211,6 +232,10 @@ function Details_menu_generetor(){
  document.getElementById("Details_menu_home").style.display="none"; 
  document.getElementById("Details_menu_generetor").style.display="inline-block"; 
  document.getElementById("Details_menu_grid").style.display="none"; 
+ 
+ 
+chartFun([generatorData]);
+
 }
 
 function Details_menu_grid(){
@@ -218,6 +243,8 @@ document.getElementById("Details_menu_solar").style.display = "none";
  document.getElementById("Details_menu_home").style.display="none"; 
  document.getElementById("Details_menu_grid").style.display="inline-block"; 
  document.getElementById("Details_menu_generetor").style.display="none";
+
+chartFun([gridData]);
 }
 
 function Details_menu_home(){
@@ -225,6 +252,8 @@ function Details_menu_home(){
  document.getElementById("Details_menu_home").style.display="inline-block"; 
  document.getElementById("Details_menu_grid").style.display="none"; 
  document.getElementById("Details_menu_generetor").style.display="none";
+ chartFun([solarData, generatorData, gridData]);
+
 }
 
 
@@ -242,6 +271,7 @@ function removeHoverClass(id) {
     document.getElementById('monthButton').addEventListener('click',function(){
     document.getElementById('monthButton').style.backgroundColor = '#E0ECFC';
     document.getElementById('weekButton').style.backgroundColor = 'white';})
+
 
 </script>
 </body>
