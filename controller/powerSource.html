@@ -172,10 +172,24 @@ function chartFun(send) {
                 formatter: function (val) {
                     return val + "min"}}
         },
-        fill: { opacity: 1 ,},
-        legend: {position: 'top',horizontalAlign: 'left',offsetX: 40 }
+       
+fill: {
+  colors: [ function({ seriesIndex, w }) {
+    var name = send[seriesIndex].name;
+    if(name === 'Solar Power') {
+        return '#018FFB'
+    } else if (name === 'Generator Power') {
+        return '#00E296'
+    } else if (name === 'Grid Power'){
+        return '#FEB018'
+    }
+  }]
+}
+,    
+        legend: {position: 'top',horizontalAlign: 'left',offsetX: 20, markers: {fillColors: ['#018FFB', '#00E296', '#FEB018']}}
     };
 
+  
     if (chart) {chart.destroy();}
 
     chart = new ApexCharts(document.querySelector("#chart"), options);
