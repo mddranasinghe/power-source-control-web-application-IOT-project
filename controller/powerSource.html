@@ -21,7 +21,7 @@
         #image_home{   width: 50px; height: 50px;}
         .left_path{width: 90%; height: 80px; border-style: solid; border-color:rgb(78, 234, 26); border-top: none; border-right: none; border-width: 3px; margin-left: 20px; margin-bottom: 10%;border-radius: 0px 10px; }
 
-        .middle_path{width: 10px; height: 40px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 42%; margin-bottom: 10%;}
+        .middle_path{width: 9.5px; height: 40px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 42%; margin-bottom: 10%;}
         .right_path{ height: 80px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 3px; margin-right: 20px; margin-bottom: 10%;border-radius: 10px 0px;}
 
         #image_solar.hover-effect,#image_home.hover-effect,#image_grid.hover-effect,#image_generetor.hover-effect{ opacity: 0.5;}
@@ -103,22 +103,13 @@
   <tr>
     <td colspan="3" style="text-align: center;">
     <div class="Details_menu" id="Details_menu_home" style="display: inline-block;" >
-    <div class="details_box"> This is Home</div>
+    <div class="details_box"> notice</div>
     </div>
-
-    <div class="Details_menu" id="Details_menu_solar" style="display: none;">  
-     <div class="details_box">This is Solar</div>
-    </div>
-    <div class="Details_menu" id="Details_menu_generetor" style="display: none;">  
-     <div class="details_box">This is Generetor</div>
-</div>
-    <div class="Details_menu" id="Details_menu_grid" style="display: none;">
-        <div class="details_box">this is Grid</div>
 </div>
 </td></tr>
 </table>
 <p style="font-size: 20px; font-weight: bold;">Monitor Soruce Run Time</p>
-<p style="color: #636363; font-weight: bold;">Home</p>
+<div id="monitor_device"style="color: #636363; font-weight: bold; margin-left:2.6%">Home Power</div>
 
 <div class="button-div" style="margin: 0 auto; width: 100%; margin-bottom:5px;">
 <button id="weekButton"ontouchstart="addHoverClass('weekButton')" ontouchend="removeHoverClass('weekButton')" clicked>Week</button>
@@ -214,35 +205,24 @@ chartFun([solarData, generatorData, gridData]);
 
 function Details_menu_solar()
 {
-document.getElementById("Details_menu_solar").style.display = "inline-block";
- document.getElementById("Details_menu_home").style.display="none"; 
- document.getElementById("Details_menu_generetor").style.display="none"; 
- document.getElementById("Details_menu_grid").style.display="none";
-
+document.getElementById('monitor_device').innerHTML="Solar Power";
 chartFun([solarData]);
 }
 
 function Details_menu_generetor(){
-    document.getElementById("Details_menu_solar").style.display = "none";
- document.getElementById("Details_menu_home").style.display="none"; 
- document.getElementById("Details_menu_generetor").style.display="inline-block"; 
- document.getElementById("Details_menu_grid").style.display="none"; 
+ document.getElementById('monitor_device').innerHTML="Genertor Power";
+
 chartFun([generatorData]);
 }
 
 function Details_menu_grid(){
-document.getElementById("Details_menu_solar").style.display = "none";
- document.getElementById("Details_menu_home").style.display="none"; 
- document.getElementById("Details_menu_grid").style.display="inline-block"; 
- document.getElementById("Details_menu_generetor").style.display="none";
+ document.getElementById('monitor_device').innerHTML="Grid Power";
+
 chartFun([gridData]);
 }
 
 function Details_menu_home(){
-    document.getElementById("Details_menu_solar").style.display = "none";
- document.getElementById("Details_menu_home").style.display="inline-block"; 
- document.getElementById("Details_menu_grid").style.display="none"; 
- document.getElementById("Details_menu_generetor").style.display="none";
+ document.getElementById('monitor_device').innerHTML="Home Power";
  chartFun([solarData, generatorData, gridData]);
 
 }
