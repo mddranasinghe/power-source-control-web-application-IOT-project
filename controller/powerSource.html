@@ -6,6 +6,13 @@
     <title>Document</title>
     <script src="../resources\js\apexcharts.min.js"></script>
     <style>
+        * {
+	
+    font-family: 'Avenir', sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
         .Gui_table{border-style: none; width: 100%;box-shadow: 0.5px 0.5px 3px 0.5px gray;}
         td{border-style: none; vertical-align: top; text-align:center ;}
         .continar{width: 95%; height: 500px; margin: 0 auto;  position: relative; }
@@ -59,7 +66,7 @@
 
 
 
-.button-div button{ width: 46%; margin-left: 2.6%; margin-top: 5%; margin-bottom: 2%; background-color: white;box-shadow: 0.4px 0.4px 2px 0.4px gray;border: none; border-radius: 5px 5px; padding-top:10px; padding-bottom: 10px;} 
+.button-div button{ width: 46%; margin-left: 2.6%; margin-top: 2%; margin-bottom: 2%; background-color: white;box-shadow: 0.4px 0.4px 2px 0.4px gray;border: none; border-radius: 5px 5px; padding-top:10px; padding-bottom: 10px; font-weight: bold;} 
 
 .apexcharts-menu-icon {
   display: none;
@@ -110,12 +117,14 @@
 </div>
 </td></tr>
 </table>
+<p style="font-size: 20px; font-weight: bold;">Monitor Soruce Run Time</p>
+<p style="color: #636363; font-weight: bold;">Home</p>
 
 <div class="button-div" style="margin: 0 auto; width: 100%;">
 <button id="weekButton"ontouchstart="addHoverClass('weekButton')" ontouchend="removeHoverClass('weekButton')" clicked>Week</button>
 <button id="monthButton"ontouchstart="addHoverClass('monthButton')" ontouchend="removeHoverClass('monthButton')">Month</button></div>
 
-<div id="chart" style=" width: 100%;"></div>
+<div id="chart" style=" width: 100%; box-shadow: 0.5px 0.5px 3px 0.5px gray; overflow-x: auto;"></div>
 
 <script>
 var chart,options,
