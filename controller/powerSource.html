@@ -115,14 +115,14 @@
 <button id="weekButton"ontouchstart="addHoverClass('weekButton')" ontouchend="removeHoverClass('weekButton')" clicked>Week</button>
 <button id="monthButton"ontouchstart="addHoverClass('monthButton')" ontouchend="removeHoverClass('monthButton')">Month</button></div>
 
-<div id="chart" style="width: 100%; height: 100%; box-shadow: 0.5px 0.5px 3px 0.5px gray; position: relative;">
+<div id="chart" style="width: 100%;  box-shadow: 0.5px 0.5px 3px 0.5px gray;">
     
 </div>
 
 
 <script>
 var chart,options,
-X_categories=["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun","Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun","Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun"],
+X_categories=["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun"],
 solarData = {  name: 'Solar Power',  data: [43, 55, 41, 37, 32, 33, 30]},
 generatorData = { name: 'Generator Power', data: [53, 32, 33, 40, 32, 33, 34]},
 gridData = { name: 'Grid Power', data: [12, 17, 11, 32, 33, 40, 20]};
@@ -132,7 +132,7 @@ function chartFun(send) {
         series: send,
         chart: {
             type: 'bar',
-            height: '100%',
+            height: '400px',
             stacked: true,
         },
         plotOptions: {
