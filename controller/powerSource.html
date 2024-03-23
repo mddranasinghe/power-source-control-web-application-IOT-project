@@ -14,12 +14,12 @@
 	box-sizing: border-box;
 }
         .Gui_table{border-style: none; width: 85%; margin: 0 auto;}
-        td{border-style: none; vertical-align: top;}
+        td{border-style: solid; vertical-align: top;}
         .continar{width: 98%; height: 500px; margin: 0 auto;  position: relative; }
        .continar img{width: 50px; height: 50px; }
       
         #image_home{   width: 50px; height: 50px;}
-        .left_path{width: 90%; height: 80px; border-style: solid; border-color:rgb(78, 234, 26); border-top: none; border-right: none; border-width: 3px; margin-left: 20px; margin-bottom: 10%;border-radius: 0px 10px; }
+        .left_path{ height: 80px; border-style: solid; border-color:rgb(78, 234, 26); border-top: none; border-right: none; border-width: 3px; margin-left: 20px; margin-bottom: 10%;border-radius: 0px 10px; }
 
         .middle_path{width: 9.7px; height: 40px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 42%; margin-bottom: 10%;}
         .right_path{ height: 80px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 3px; margin-right: 20px; margin-bottom: 10%;border-radius: 10px 0px;}
@@ -63,6 +63,21 @@
  }
 
 }
+#left_dash{
+    background: 
+    linear-gradient(0deg,rgb(78, 234, 26) 50%, transparent 50%),/* Top border */
+    linear-gradient(90deg,rgb(78, 234, 26) 50%, transparent 50%);/* left border */
+
+    background-repeat:repeat-y,repeat-x; 
+    background-size: 3px 25px,25px 3px;
+    animation: border-dance 1.5s infinite linear;
+        }
+  @keyframes border-dance{
+ 0% {
+   background-position: .7px 0px,0px 73.75px;}
+ 100% {
+   background-position: .7px 99px ,100px 73.75px;}
+}
 
 
 
@@ -76,6 +91,8 @@ div.sticky
     position: -webkit-sticky; 
     position: sticky;
    top: 0;
+
+
 }
     </style> 
 </head>
@@ -86,25 +103,18 @@ div.sticky
             <td><a href="../index.html"><img src="../resources/image/less-than.png" style="width: 30px; height: 35px;margin-top: 50%; "></a></td>
             <td style="text-align: center; width:100%;" > <h2 >Power Source Status</h2></td>
           </tr></table>
-<table class="Gui_table" >
+         <table class="Gui_table" >
     <tr >
         <td style="width: 50%; padding-top: 10px;text-align: left;">
-            <img src="../resources\image\solar.svg" id="image_solar" alt="Power" onclick="Details_menu_solar()" ontouchstart="addHoverClass('image_solar')" ontouchend="removeHoverClass('image_solar')"  >
-            <div class=left_path id="left_dash"></div>
-
-
-        </td>
-                <td style=" padding-top: 10px;">
+            <img src="../resources\image\solar.svg" id="image_solar" alt="Power" onclick="Details_menu_solar()" ontouchstart="addHoverClass('image_solar')" ontouchend="removeHoverClass('image_solar')" >
+            <div class=left_path id="left_dash"></div></td>
+        <td style=" padding-top: 10px;">
             <img src="../resources\image\generetor.svg" id="image_generetor" alt="Power"  onclick="Details_menu_generetor()"  ontouchstart="addHoverClass('image_generetor')" ontouchend="removeHoverClass('image_generetor')" >
             <div class="middle_path" id="middle_dash"></div>
-            <img src="../resources\image\h.svg" id="image_home" alt="Power"onclick="Details_menu_home()" ontouchstart="addHoverClass('image_home')" ontouchend="removeHoverClass('image_home')"  >
-
-        </td>
+            <img src="../resources\image\h.svg" id="image_home" alt="Power"onclick="Details_menu_home()" ontouchstart="addHoverClass('image_home')" ontouchend="removeHoverClass('image_home')"  >  </td>
         <td style="width: 50%; padding-top: 10px; text-align:right;">
             <img src="../resources\image\grid.svg" id="image_grid" alt="Power" onclick="Details_menu_grid()" ontouchstart="addHoverClass('image_grid')" ontouchend="removeHoverClass('image_grid')" >
-            <div class="right_path" id="right_dash" ></div>
-
-        </td>
+            <div class="right_path" id="right_dash" ></div> </td>
     </tr>
   <tr>
     <td colspan="3" style="text-align: center;">
