@@ -71,6 +71,12 @@
 .apexcharts-menu-icon {
   display: none;
 }
+div.sticky
+{
+    position: -webkit-sticky; 
+    position: sticky;
+   top: 0;
+}
     </style> 
 </head>
 <body>
@@ -108,15 +114,18 @@
 </div>
 </td></tr>
 </table><!-- #F3F3F3-->
-<p style="font-size: 20px; font-weight: bold;">Monitor Soruce Run Time</p>
-<div id="monitor_device"style="color:gray; font-weight: bold; margin-left:2.6%">Home Power</div>
+<div class="sticky">
+    <p style="font-size: 20px; font-weight: bold;">Monitor Soruce Run Time</p>
+    <div id="monitor_device" style="color: gray; font-weight: bold; margin-left: 2.6%">Home Power</div>
 
-<div class="button-div" style="margin: 0 auto; width: 100%; margin-bottom:5px;">
-<button id="weekButton"ontouchstart="addHoverClass('weekButton')" ontouchend="removeHoverClass('weekButton')" clicked>Week</button>
-<button id="monthButton"ontouchstart="addHoverClass('monthButton')" ontouchend="removeHoverClass('monthButton')">Month</button></div>
+    <div class="button-div" style="margin: 0 auto; width: 100%; margin-bottom: 5px;">
+        <button id="weekButton" ontouchstart="addHoverClass('weekButton')" ontouchend="removeHoverClass('weekButton')" clicked>Week</button>
+        <button id="monthButton" ontouchstart="addHoverClass('monthButton')" ontouchend="removeHoverClass('monthButton')">Month</button>
+    </div>
+</div>
 
-<div id="chart" style="width: 100%;  box-shadow: 0.5px 0.5px 3px 0.5px gray;">
-    
+<div id="chart" style="width: 100%; box-shadow: 0.5px 0.5px 3px 0.5px gray;">
+
 </div>
 
 
