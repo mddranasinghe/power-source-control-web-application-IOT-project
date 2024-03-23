@@ -122,7 +122,8 @@
 
 <script>
 var chart,options,
-X_categories=["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun"],
+X_categories= ["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun","Wed", "Thu", "Fri", "Sta", "Sun","Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun","Wed", "Thu", "Fri", "Sta", "Sun","Sun","Wed", "Thu", "Fri", "Sta", "Sun"],
+chartHeiht= X_categories.length*50,
 solarData = {  name: 'Solar Power',  data: [43, 55, 41, 37, 32, 33, 30]},
 generatorData = { name: 'Generator Power', data: [53, 32, 33, 40, 32, 33, 34]},
 gridData = { name: 'Grid Power', data: [12, 17, 11, 32, 33, 40, 20]};
@@ -130,51 +131,25 @@ gridData = { name: 'Grid Power', data: [12, 17, 11, 32, 33, 40, 20]};
 function chartFun(send) {
      options = {
         series: send,
-        chart: {
-            type: 'bar',
-            height: '400px',
-            stacked: true,
+        chart: { type: 'bar', height: chartHeiht,stacked: true,
         },
         plotOptions: {
-            bar: {
-                barHeight: '25px',
-                height:'50px',
-                horizontal: true,
-                dataLabels: {
-                    total: {
-                        enabled: true,
-                        offsetX: 0,
-                        style: {
-                            fontSize: '13px',
-                            fontWeight: 900
-                        }
-                    }
-                }
-            },
+            bar: { barHeight: '25px', height:'50px', horizontal: true, dataLabels: {
+                    total: {  enabled: true,  offsetX: 0,
+                        style: {  fontSize: '13px',  fontWeight: 900 }  } } },
         },
-        stroke: {
-            width: 1,
-            colors: ['#fff']
-        },
-        title: {
-            text:undefined
-        },
+        stroke: {width: 1,colors: ['#fff'] },
+        title: {text:undefined  },
         xaxis: {
             categories: X_categories,
-            labels: {
-                formatter: function (val) {
-                    return val + "Min"
-                }
-            }
+            labels: {formatter: function (val) {
+                    return val + "Min"}  }
         },
         yaxis: {
-            title: {
-                text: undefined
-            },
+            title: { text: undefined },
         },
         tooltip: {
-            y: {
-                formatter: function (val) {
+            y: { formatter: function (val) {
                     return val + "min"}}
         },
        
@@ -187,14 +162,11 @@ fill: {
         return '#00E296'
     } else if (name === 'Grid Power'){
         return '#FEB018'
-    }
-  }]
-}
-,    
-        legend: {position: 'top',horizontalAlign: 'left',offsetX: 20, markers: {fillColors: ['#018FFB', '#00E296', '#FEB018']}}
+    } }]
+},    
+ legend: {position: 'top',horizontalAlign: 'left',offsetX: 20, markers: {fillColors: ['#018FFB', '#00E296', '#FEB018']}}
     };
-
-  
+    
     if (chart) {chart.destroy();}
 
     chart = new ApexCharts(document.querySelector("#chart"), options);
@@ -206,8 +178,13 @@ chartFun([solarData, generatorData, gridData]);
 function Details_menu_solar()
 {
 document.getElementById('monitor_device').innerHTML="Solar Power";
-chartFun([solarData]);
+document.getElementById('weekButton').addEventListener('click', function() {
+chartFun([solarData]);});
+document.getElementById('monthButton').addEventListener('click', function() {
+chartFun2([solarData]);});
 }
+
+
 
 function Details_menu_generetor(){
  document.getElementById('monitor_device').innerHTML="Genertor Power";
@@ -237,16 +214,27 @@ function removeHoverClass(id) {
 }
     document.getElementById('weekButton').addEventListener('click',function(){
     document.getElementById('weekButton').style.backgroundColor = '#E0ECFC';
-    document.getElementById('monthButton').style.backgroundColor = 'white';})
+    document.getElementById('monthButton').style.backgroundColor = 'white';
+    chartFun([solarData, generatorData, gridData]);})
 
     document.getElementById('monthButton').addEventListener('click',function(){
     document.getElementById('monthButton').style.backgroundColor = '#E0ECFC';
-    document.getElementById('weekButton').style.backgroundColor = 'white';})
+    document.getElementById('weekButton').style.backgroundColor = 'white';
+    chartFun2([solarData, generatorData, gridData]);
+
+
+})
 
     window.addEventListener('load', function() {
             var weekButton = document.getElementById('weekButton');
             weekButton.click();
         });
+
+
+
+
+
+
 </script>
 </body>
 </html>
