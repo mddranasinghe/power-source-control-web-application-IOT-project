@@ -197,10 +197,8 @@ chartFun([solarData, generatorData, gridData]);
 function Details_menu_solar()
 {
 document.getElementById('monitor_device').innerHTML="Solar Power";
-document.getElementById('weekButton').addEventListener('click', function() {
-chartFun([solarData]);});
-document.getElementById('monthButton').addEventListener('click', function() {
-chartFun2([solarData]);});
+
+chartFun([solarData]);
 }
 
 
