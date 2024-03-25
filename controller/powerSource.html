@@ -28,7 +28,8 @@ div.sticky {
         #image_home{   width: 50px; height: 50px;}
         .left_path{ height: 80px; border-style: solid; border-color:rgb(78, 234, 26); border-top: none; border-right: none; border-width: 3px; margin-left: 20px; margin-bottom: 10%;border-radius: 0px 10px; }
 
-        .middle_path{width: 19.3%; height: 40px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 21px; margin-bottom: 10%;}
+        .middle_path{width: 19.3%; height: 40px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 21px; margin-bottom: 10%; border-right: none; border-left: none;}
+
         .right_path{ height: 80px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 3px; margin-right: 20px; margin-bottom: 10%;border-radius: 10px 0px;}
 
         #image_solar.hover-effect,#image_home.hover-effect,#image_grid.hover-effect,#image_generetor.hover-effect{ opacity: 0.5;}
@@ -63,10 +64,10 @@ div.sticky {
         }
   @keyframes border-danc{
  0% {
-   background-position: 0.7px 0px;
+   background-position: 3.2px 0px;
  }
  100% {
-   background-position: 0.7px 100px;
+   background-position: 3.2px 100px;
  }
 
 }
@@ -112,6 +113,7 @@ div.sticky {
         <td style=" padding-top: 10px;" width="1px">
             <img src="../resources\image\generetor.svg" id="image_generetor" alt="Power"  onclick="Details_menu_generetor()"  ontouchstart="addHoverClass('image_generetor')" ontouchend="removeHoverClass('image_generetor')" >
             <div class="middle_path" id="middle_dash"></div>
+       
             <img src="../resources\image\h.svg" id="image_home" alt="Power"onclick="Details_menu_home()" ontouchstart="addHoverClass('image_home')" ontouchend="removeHoverClass('image_home')"  >  </td>
         <td style="width: 50%; padding-top: 10px; text-align:right;">
             <img src="../resources\image\grid.svg" id="image_grid" alt="Power" onclick="Details_menu_grid()" ontouchstart="addHoverClass('image_grid')" ontouchend="removeHoverClass('image_grid')" >
