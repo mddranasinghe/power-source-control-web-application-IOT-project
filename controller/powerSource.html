@@ -6,6 +6,13 @@
     <title>Document</title>
     <script src="../resources\js\apexcharts.min.js"></script>
     <style>
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+ 
+}
         * {
 	
     font-family: 'Avenir', sans-serif;
@@ -51,7 +58,7 @@
     linear-gradient(0deg,rgb(78, 234, 26) 50%, transparent 50%);/* right border */
 
     background-repeat:repeat-y; 
-    background-size: 2.5px 25px;
+    background-size: 3px 25px;
     animation: border-danc 1.5s infinite linear;
         }
   @keyframes border-danc{
@@ -69,7 +76,7 @@
     linear-gradient(90deg,rgb(78, 234, 26) 50%, transparent 50%);/* left border */
 
     background-repeat:repeat-y,repeat-x; 
-    background-size: 3px 25px,25px 3px;
+    background-size: 3px 25px, 25px 3px;
     animation: border-dance 1.5s infinite linear;
         }
   @keyframes border-dance{
@@ -86,14 +93,8 @@
 .apexcharts-menu-icon {
   display: none;
 }
-div.sticky
-{
-    position: -webkit-sticky; 
-    position: sticky;
-   top: 0;
 
 
-}
     </style> 
 </head>
 <body>
@@ -141,7 +142,7 @@ div.sticky
 
 <script>
 var chart,options,
-X_categories= ["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun","Wed", "Thu", "Fri", "Sta", "Sun","Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun","Wed", "Thu", "Fri", "Sta", "Sun","Sun","Wed", "Thu", "Fri", "Sta", "Sun"],
+X_categories= ["Mon", "Tues", "Wed", "Thu", "Fri", "Sta", "Sun"],
 chartHeiht= X_categories.length*50,
 solarData = {  name: 'Solar Power',  data: [43, 55, 41, 37, 32, 33, 30]},
 generatorData = { name: 'Generator Power', data: [53, 32, 33, 40, 32, 33, 34]},
