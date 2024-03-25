@@ -21,14 +21,14 @@ div.sticky {
 	box-sizing: border-box;
 }
         .Gui_table{border-style: none; width: 85%; margin: 0 auto;}
-        td{border-style: none; vertical-align: top;}
+        td{border-style: solid; vertical-align: top;}
         .continar{width: 98%; height: 500px; margin: 0 auto;  position: relative; }
        .continar img{width: 50px; height: 50px; }
       
         #image_home{   width: 50px; height: 50px;}
         .left_path{ height: 80px; border-style: solid; border-color:rgb(78, 234, 26); border-top: none; border-right: none; border-width: 3px; margin-left: 20px; margin-bottom: 10%;border-radius: 0px 10px; }
 
-        .middle_path{width: 21%; height: 40px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 21px; margin-bottom: 10%;}
+        .middle_path{width: 20%; height: 40px;  border-style: solid; border-color: rgb(78, 234, 26); border-top: none;  ;border-bottom:none; border-width: 3px; margin-left: 21px; margin-bottom: 10%;}
         .right_path{ height: 80px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 3px; margin-right: 20px; margin-bottom: 10%;border-radius: 10px 0px;}
 
         #image_solar.hover-effect,#image_home.hover-effect,#image_grid.hover-effect,#image_generetor.hover-effect{ opacity: 0.5;}
@@ -63,10 +63,10 @@ div.sticky {
         }
   @keyframes border-danc{
  0% {
-   background-position: 0.5px 0px;
+   background-position: 0.7px 0px;
  }
  100% {
-   background-position: 0.5px 100px;
+   background-position: 0.7px 100px;
  }
 
 }
@@ -109,7 +109,7 @@ div.sticky {
         <td style="width: 50%; padding-top: 10px;text-align: left;">
             <img src="../resources\image\solar.svg" id="image_solar" alt="Power" onclick="Details_menu_solar()" ontouchstart="addHoverClass('image_solar')" ontouchend="removeHoverClass('image_solar')" >
             <div class=left_path id="left_dash"></div></td>
-        <td style=" padding-top: 10px;">
+        <td style=" padding-top: 10px;" width="1px">
             <img src="../resources\image\generetor.svg" id="image_generetor" alt="Power"  onclick="Details_menu_generetor()"  ontouchstart="addHoverClass('image_generetor')" ontouchend="removeHoverClass('image_generetor')" >
             <div class="middle_path" id="middle_dash"></div>
             <img src="../resources\image\h.svg" id="image_home" alt="Power"onclick="Details_menu_home()" ontouchstart="addHoverClass('image_home')" ontouchend="removeHoverClass('image_home')"  >  </td>
