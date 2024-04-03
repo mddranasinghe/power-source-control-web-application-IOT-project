@@ -9,16 +9,17 @@
 #right_path{ height: 80px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 5px; margin-right: 20px; margin-bottom: 10%;}
 
 #left_path{
- --angle: 2deg;
-  border-image: linear-gradient(var(--angle), #7af780, green ) 0.5;
+ --angle: 0deg;
+ --rotation-angle: -360deg;
+  border-image: linear-gradient(var(--angle), #7af780, green ) 1;
   animation: 1s rotate linear infinite;
-  --rotation-angle: -360deg;
+
 }
 
 #right_path {
   --angle: 0deg;
   --rotation-angle: 360deg;
-  border-image: linear-gradient(var(--angle), #7af780, green) 0.5;
+  border-image: linear-gradient(var(--angle), #7af780, green) 1;
   animation: 1s rotate linear infinite;
 
 }
