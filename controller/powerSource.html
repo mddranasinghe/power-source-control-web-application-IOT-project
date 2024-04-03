@@ -6,8 +6,33 @@
     <title>Document</title>
     <script src="../resources\js\apexcharts.min.js"></script>
     <style>
+
+div.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+ 
+}
+ * {
+	
+    font-family: 'Avenir', sans-serif;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+ .Gui_table{border-style: none; width: 85%; margin: 0 auto;}
+td{border-style: none; vertical-align: top;}
+.continar{width: 98%; height: 500px; margin: 0 auto;  position: relative; }
+.continar img{width: 50px; height: 50px; }
+#image_generetor{display: none; position: absolute;}
+#image_home{   width: 50px; height: 50px; position: relative;  margin-top:95px;}
+
+
+#left_path{ height: 80px; border-style: solid; border-color:rgb(193, 203, 205); border-top: none; border-right: none; border-width: 5px; margin-left: 20px; margin-bottom: 10%; }
+#middle_path{ display: none;margin-top: 50px; position: absolute; width: 13px; height: 42px;  border-style: solid; border-color: rgb(193, 203, 205); border-top: none;  border-bottom:none; border-width: 5px; margin-left: 14.5px; margin-bottom: 10%;  border-left: none;}
 #right_path{ height: 80px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 5px; margin-right: 20px; margin-bottom: 10%;}
 
+/*  animation */
 #left_path{
  --angle: 0deg;
  --rotation-angle: -360deg;
@@ -35,33 +60,9 @@
   initial-value: 0deg;
   inherits: false;
 }
-div.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
- 
-}
-        * {
-	
-    font-family: 'Avenir', sans-serif;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
- .Gui_table{border-style: none; width: 85%; margin: 0 auto;}
-td{border-style: none; vertical-align: top;}
-.continar{width: 98%; height: 500px; margin: 0 auto;  position: relative; }
-.continar img{width: 50px; height: 50px; }
-#image_generetor{display: none; position: absolute;}
-#image_home{   width: 50px; height: 50px; position: relative;  margin-top:95px;}
-#left_path{ height: 80px; border-style: solid; border-color:rgb(193, 203, 205); border-top: none; border-right: none; border-width: 5px; margin-left: 20px; margin-bottom: 10%; }
-#middle_path{ display: none;margin-top: 50px; position: absolute; width: 13px; height: 42px;  border-style: solid; border-color: rgb(193, 203, 205); border-top: none;  border-bottom:none; border-width: 5px; margin-left: 14.5px; margin-bottom: 10%;  border-left: none;}
-
 
 #image_solar.hover-effect,#image_home.hover-effect,#image_grid.hover-effect,#image_generetor.hover-effect{ opacity: 0.5;}
-
 .Details_menu{width: 100%; height:100%; margin-bottom: 10px;}
-
 .details_box{width: 100%; height: 75px; background-color: #FFF1DC; margin-top: 2%; border-radius: 10px 10px; }
 
 
@@ -75,6 +76,9 @@ td{border-style: none; vertical-align: top;}
 .apexcharts-menu-icon {
   display: none;
 }
+
+
+
 
 
     </style> 
