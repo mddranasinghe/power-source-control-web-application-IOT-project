@@ -6,7 +6,34 @@
     <title>Document</title>
     <script src="../resources\js\apexcharts.min.js"></script>
     <style>
+#right_path{ height: 80px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 5px; margin-right: 20px; margin-bottom: 10%;}
 
+#left_path{
+ --angle: 2deg;
+  border-image: linear-gradient(var(--angle), #7af780, green ) 0.5;
+  animation: 1s rotate linear infinite;
+  --rotation-angle: -360deg;
+}
+
+#right_path {
+  --angle: 0deg;
+  --rotation-angle: 360deg;
+  border-image: linear-gradient(var(--angle), #7af780, green) 0.5;
+  animation: 1s rotate linear infinite;
+
+}
+
+@keyframes rotate {
+  to {
+    --angle: var(--rotation-angle);
+    }
+}
+        
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
 div.sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -29,7 +56,6 @@ td{border-style: none; vertical-align: top;}
 #left_path{ height: 80px; border-style: solid; border-color:rgb(193, 203, 205); border-top: none; border-right: none; border-width: 5px; margin-left: 20px; margin-bottom: 10%; }
 #middle_path{ display: none;margin-top: 50px; position: absolute; width: 13px; height: 42px;  border-style: solid; border-color: rgb(193, 203, 205); border-top: none;  border-bottom:none; border-width: 5px; margin-left: 14.5px; margin-bottom: 10%;  border-left: none;}
 
-#right_path{ height: 10vmin; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 1rem; margin-right: 20px; margin-bottom: 10%;}
 
 #image_solar.hover-effect,#image_home.hover-effect,#image_grid.hover-effect,#image_generetor.hover-effect{ opacity: 0.5;}
 
@@ -37,33 +63,6 @@ td{border-style: none; vertical-align: top;}
 
 .details_box{width: 100%; height: 75px; background-color: #FFF1DC; margin-top: 2%; border-radius: 10px 10px; }
 
-        
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
-}
-
-#left_path{
- --angle: 2deg;
-  border-image: linear-gradient(var(--angle), #7af780, green ) 0.5;
-  animation: 1s rotate linear infinite;
-  --rotation-angle: -360deg;
-}
-
-#right_path {
-  --angle: 0deg;
-  --rotation-angle: 360deg;
-  border-image: linear-gradient(var(--angle), #7af780, green) 0.5;
-  animation: 1s rotate linear infinite;
-
-}
-
-@keyframes rotate {
-  to {
-    --angle: var(--rotation-angle);
-    }
-}
 
 
 
@@ -90,7 +89,7 @@ td{border-style: none; vertical-align: top;}
     <tr >
         <td style="width: 50%; padding-top: 10px;text-align: left;">
             <img src="../resources/image/solar.svg" id="image_solar" alt="Power" onclick="Details_menu_solar()" ontouchstart="addHoverClass('image_solar')" ontouchend="removeHoverClass('image_solar')" >
-            <div  id="left_path" style="border-top: none; border-right: none;"></div></td>
+            <div  id="left_path"></div></td>
         <td style=" padding-top: 10px;" width="1px">
             <img src="../resources\image\generetor.svg" id="image_generetor" alt="Power"  onclick="Details_menu_generetor()"  ontouchstart="addHoverClass('image_generetor')" ontouchend="removeHoverClass('image_generetor')" >
             <div  id="middle_path" ></div>
@@ -98,6 +97,7 @@ td{border-style: none; vertical-align: top;}
             <img src="../resources\image\h.svg" id="image_home" alt="Power"onclick="Details_menu_home()" ontouchstart="addHoverClass('image_home')" ontouchend="removeHoverClass('image_home')"  >  </td>
         <td style="width: 50%; padding-top: 10px; text-align:right;">
             <img src="../resources\image\grid.svg" id="image_grid" alt="Power" onclick="Details_menu_grid()" ontouchstart="addHoverClass('image_grid')" ontouchend="removeHoverClass('image_grid')" >
+            
             <div id="right_path" ></div> </td>
     </tr>
   <tr>
