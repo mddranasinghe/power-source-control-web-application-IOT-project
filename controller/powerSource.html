@@ -10,9 +10,7 @@
 div.sticky {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
- 
-}
+  top: 0;}
  * {
 	
     font-family: 'Avenir', sans-serif;
@@ -20,16 +18,17 @@ div.sticky {
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }
- .Gui_table{border-style: none; width: 85%; margin: 0 auto;}
+
+.Gui_table{border-style: none; width: 85%; margin: 0 auto;}
 td{border-style: none; vertical-align: top;}
 .continar{width: 98%; height: 500px; margin: 0 auto;  position: relative; }
 .continar img{width: 50px; height: 50px; }
-#image_generetor{display: none; position: absolute;}
+#image_generetor{display: inline; position: absolute;}
 #image_home{   width: 50px; height: 50px; position: relative;  margin-top:95px;}
 
 
 #left_path{ height: 80px; border-style: solid; border-color:rgb(193, 203, 205); border-top: none; border-right: none; border-width: 5px; margin-left: 20px; margin-bottom: 10%; }
-#middle_path{ display: none;margin-top: 50px; position: absolute; width: 13px; height: 42px;  border-style: solid; border-color: rgb(193, 203, 205); border-top: none;  border-bottom:none; border-width: 5px; margin-left: 14.5px; margin-bottom: 10%;  border-left: none;}
+#middle_path{ display: inline;margin-top: 50px; position: absolute; width: 13px; height: 42px;  border-style: solid; border-color: rgb(193, 203, 205); border-top: none;  border-bottom:none; border-width: 5px; margin-left: 14.5px; margin-bottom: 10%;  border-left: none;}
 #right_path{ height: 80px; border-style: solid; border-color: rgb(193, 203, 205); border-top: none; border-left:none ; border-width: 5px; margin-right: 20px; margin-bottom: 10%;}
 
 /*  animation */
@@ -41,7 +40,7 @@ td{border-style: none; vertical-align: top;}
 
 }
 
-#right_path {
+right_path {
   --angle: 0deg;
   --rotation-angle: 360deg;
   border-image: linear-gradient(var(--angle), #7af780, green) 1;
@@ -65,14 +64,7 @@ td{border-style: none; vertical-align: top;}
 .Details_menu{width: 100%; height:100%; margin-bottom: 10px;}
 .details_box{width: 100%; height: 75px; background-color: #FFF1DC; margin-top: 2%; border-radius: 10px 10px; }
 
-
-
-
-
-
-
 .button-div button{ width: 46%; margin-left: 2.6%; margin-top: 2%; margin-bottom: 2%; background-color: white;box-shadow: 0.4px 0.4px 2px 0.4px gray;border: none; border-radius: 5px 5px; padding-top:10px; padding-bottom: 10px; font-weight: bold;} 
-
 .apexcharts-menu-icon {
   display: none;
 }
@@ -116,7 +108,8 @@ td{border-style: none; vertical-align: top;}
 </td></tr>
 </table><!-- #F3F3F3-->
 
-<button onclick="addclass()"> b</button>
+
+
 <div class="sticky">
     <p style="font-size: 20px; font-weight: bold;">Monitor Soruce Run Time</p>
     <div id="monitor_device" style="color: gray; font-weight: bold; margin-left: 2.6%">Home Power</div>
